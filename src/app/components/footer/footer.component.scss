@@ -1,0 +1,44 @@
+/* Basic Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer img {
+  height: 40px; /* Adjust based on the logo size */
+}
+
+footer div {
+  font-size: 0.9em;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive Footer */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer img {
+    margin-bottom: 10px;
+  }
+
+  footer div {
+    margin-top: 10px;
+  }
+}

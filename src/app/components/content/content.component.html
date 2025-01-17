@@ -1,0 +1,55 @@
+<div class="d-flex">
+
+  <div class="col-3">
+    <div class="category">
+      <h5>Categories</h5>
+      <ul>
+        <li>Category 1</li>
+        <li>Category 2</li>
+        <li>Category 3</li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="col-9">
+   
+    <div class="search-bar mb-3">
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Search for items..." 
+        [(ngModel)]="searchQuery"
+        (input)="onSearch()"
+      />
+   
+      <button *ngIf="searchQuery" class="btn btn-danger clear-btn" (click)="clearSearch()">Clear</button>
+    </div>
+
+
+    <button class="btn btn-primary mb-3" (click)="sortItems()">
+      Sort by Name ({{ sortOrder === 'asc' ? 'A to Z' : 'Z to A' }})
+    </button>
+
+    <div class="items-list">
+      <div *ngIf="filteredItems.length === 0" class="no-results">
+        No Results Found
+      </div>
+      
+      <div *ngFor="let item of filteredItems" class="item mb-3">
+        <div class="d-flex">
+          <img [src]="item.display_img_url || 'assets/placeholder.png'" alt="Item Image" class="item-image">
+          <div class="item-info">
+            <h6 [innerHTML]="highlightSearch(item.name)"></h6>
+            <p>{{ item.points }} Points</p>
+            <p *ngIf="item.quantity === 0">Out of Stock</p>
+            <p *ngIf="item.quantity <= item.low_quantity && item.quantity > 0">
+              On High Demand (Only {{ item.quantity }} left)
+            </p>
+            <p *ngIf="item.quantity > item.low_quantity">{{ item.quantity }} Available</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

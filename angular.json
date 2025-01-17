@@ -26,13 +26,19 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+
+              "src/assets",
+                    "src/favicon.ico" ,
               {
                 "glob": "**/*",
                 "input": "public"
+                 
               }
             ],
             "styles": [
               "src/styles.scss"
+              
+               
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -93,15 +99,21 @@
               {
                 "glob": "**/*",
                 "input": "public"
+                
               }
+             
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+               "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

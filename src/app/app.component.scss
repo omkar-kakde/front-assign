@@ -1,0 +1,112 @@
+/* Ensure the layout takes the full height of the page */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main container that holds header, content, and footer */
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+  
+  /* Content container should take the remaining space */
+  .content-container {
+    flex: 1;  /* Takes the remaining space between header and footer */
+    padding: 20px;
+    background-color: #f4f4f4; /* Optional background color */
+    overflow: auto;  /* Ensure content is scrollable */
+  }
+  
+  /* Styling for header */
+  app-header {
+  
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  /* Styling for footer */
+  app-footer {
+  
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto;  /* Push footer to the bottom */
+  }
+  
+  /* Styling for Sorting Container */
+  .sorting-container {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .sorting-container button {
+    margin: 0 10px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .sorting-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #f4f4f4;
+  }
+  
+  /* Search Bar Styling */
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Optional media queries for responsive design */
+  @media (max-width: 768px) {
+    .content-container {
+      padding: 15px; /* Adjust padding on smaller screens */
+    }
+  
+    app-header {
+      font-size: 1.2em;
+    }
+  
+    app-footer {
+      font-size: 0.9em;
+    }
+  
+    .sorting-container button {
+      padding: 6px 12px;
+    }
+  
+    table th, table td {
+      padding: 6px;
+    }
+  }
+  
