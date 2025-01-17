@@ -69,7 +69,7 @@ export class ContentComponent {
   searchQuery: string = '';
   sortOrder: string = 'asc';
   filteredItems = [...this.items];
-
+  display_img_url: string | null = '';
   sortItems() {
     if (this.sortOrder === 'asc') {
       this.items.sort((a, b) => a.name.localeCompare(b.name));
